@@ -20,7 +20,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <title>부트스트랩 연습하기</title>
+    <title>연습하기</title>
 
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
@@ -94,10 +94,20 @@
         margin-right: 20px;
       }
     </style>
+    <script>
+      $(document).ready(function () {
+        fetch("http://spartacodingclub.shop/sparta_api/weather/seoul")
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+      });
+    </script>
   </head>
   <body>
     <div class="mytitle">
       <h1>내가 선택한 최고의 영화</h1>
+      <div>서울🌡 : <span id="temp">20</span>도</div>
       <button>영화 기록하기</button>
     </div>
 
